@@ -6,6 +6,7 @@ private:
 	double base;
 	double altura;
 	double area;
+	
 public:
 	Rombo();
 	Rombo(double, double);
@@ -13,8 +14,8 @@ public:
 	double getBase();
 	double getAltura();
 	double getDiagonal();
-	double perimetro();
-	double area();
+	double Perimetro();
+	double Area();
 	void Dibujar();
 };
 

@@ -24,14 +24,14 @@ double Rectangulo::getAltura()
 	return altura;
 }
 
-double Rectangulo::perimetro()
+double Rectangulo::Perimetro()
 {
 	double perimetro = 0;
 	perimetro = 2 * (base + altura);
 	return perimetro;
 }
 
-double Rectangulo::area()
+double Rectangulo::Area()
 {
 	double area = 0;
 	area = base * altura;
@@ -40,4 +40,10 @@ double Rectangulo::area()
 
 void Rectangulo::Dibujar()
 {
+	string line;
+	ifstream MyFile("Rectangulo.txt");
+	while (getline(MyFile, line)) {
+		cout << line << '\n';
+	}
+	MyFile.close();
 }

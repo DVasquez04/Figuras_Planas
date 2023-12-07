@@ -1,5 +1,6 @@
 #include "Paralelogramo.h"
 
+
 Paralelogramo::Paralelogramo()
 {
 }
@@ -30,14 +31,14 @@ double Paralelogramo::getDiagonal()
 	return diagonal;
 }
 
-double Paralelogramo::perimetro()
+double Paralelogramo::Perimetro()
 {
 	double perimetro = 0;
 	perimetro = 2 * (diagonal + base);
 	return perimetro;
 }
 
-double Paralelogramo::area()
+double Paralelogramo::Area()
 {
 	double area = 0;
 	area = base * altura;
@@ -46,4 +47,10 @@ double Paralelogramo::area()
 
 void Paralelogramo::Dibujar()
 {
+	string line;
+	ifstream MyFile("Paralelogramo.txt");
+	while (getline(MyFile, line)) {
+		cout << line << '\n';
+	}
+	MyFile.close();
 }

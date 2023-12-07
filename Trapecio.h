@@ -4,16 +4,15 @@ class Trapecio
 private:
 	double base;
 	double altura;
-	double perimetro;
-	double area;
+
 public:
 	Trapecio();
 	Trapecio(double, double);
 	~Trapecio();
 	double getBase();
 	double getAltura();
-	double perimetro();
-	double area();
+	double Perimetro();
+	double Area();
 	void Dibujar();
 };
 

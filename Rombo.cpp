@@ -29,14 +29,14 @@ double Rombo::getDiagonal()
 	return diagonal;
 }
 
-double Rombo::perimetro()
+double Rombo::Perimetro()
 {
 	double perimetro = 0;
 	perimetro = 4 * diagonal;
 	return perimetro;
 }
 
-double Rombo::area()
+double Rombo::Area()
 {
 	double area = 0;
 	area = (base * altura) / 2;

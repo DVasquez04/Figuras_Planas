@@ -15,5 +15,10 @@ int Cuadrado::Perimetro() {
 	return perimetro;
 }
 void Cuadrado::Dibujar() {
-
+	string line;
+	ifstream MyFile("Cuadrado.txt");
+	while (getline(MyFile, line)) {
+		cout << line << '\n';
+	}
+	MyFile.close();
 }

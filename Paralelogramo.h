@@ -1,12 +1,15 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 class Paralelogramo
 {
 private:
 	double base;
 	double altura;
 	double diagonal;
-	double perimetro;
-	double area;
+	
 public:
 	Paralelogramo();
 	Paralelogramo(double, double, double);
@@ -14,8 +17,8 @@ public:
 	double getBase();
 	double getAltura();
 	double getDiagonal();
-	double perimetro();
-	double area();
+	double Perimetro();
+	double Area();
 	void Dibujar();
 };
 

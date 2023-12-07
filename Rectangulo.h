@@ -1,19 +1,22 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 class Rectangulo
 {
 private:
 	double base;
 	double altura;
-	double perimetro;
-	double area;
+	
 public:
 	Rectangulo();
 	Rectangulo(double, double);
 	~Rectangulo();
 	double getBase();
 	double getAltura();
-	double perimetro();
-	double area();
+	double Perimetro();
+	double Area();
 	void Dibujar();
 };
 

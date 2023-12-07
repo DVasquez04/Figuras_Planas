@@ -24,14 +24,14 @@ double Trapecio::getAltura()
 	return altura;
 }
 
-double Trapecio::perimetro()
+double Trapecio::Perimetro()
 {
 	double perimetro = 0;
 	perimetro = 2 * (base + altura);
 	return perimetro;
 }
 
-double Trapecio::area()
+double Trapecio::Area()
 {
 	double area = 0;
 	area = base * altura;
