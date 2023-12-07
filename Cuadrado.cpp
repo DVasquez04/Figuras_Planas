@@ -18,7 +18,7 @@ void Cuadrado::Dibujar() {
 	string line;
 	ifstream MyFile("Cuadrado.txt");
 	while (getline(MyFile, line)) {
-		cout << line << '\n';
+		cout << line << "\n";
 	}
 	MyFile.close();
 }
