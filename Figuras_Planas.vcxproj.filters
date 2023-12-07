@@ -18,5 +18,25 @@
     <ClCompile Include="Figuras_Planas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cuadrado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangulo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Circulo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cuadrado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangulo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Circulo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
