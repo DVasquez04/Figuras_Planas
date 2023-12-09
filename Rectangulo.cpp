@@ -27,14 +27,14 @@ double Rectangulo::getAltura()
 double Rectangulo::Perimetro()
 {
 	double perimetro = 0;
-	perimetro = 2 * (base + altura);
+	perimetro = 2 * (double( base) + double (altura));
 	return perimetro;
 }
 
 double Rectangulo::Area()
 {
 	double area = 0;
-	area = base * altura;
+	area = double(base) *double (altura);
 	return area;
 }
 
@@ -58,8 +58,7 @@ void Rectangulo::modify()
 {
     char change_from = '?';
     double roundedValue = round(base);
-    char change_to[sizeof(roundedValue)];
-    memcpy(change_to, &roundedValue, sizeof(roundedValue));
+    char change_to=char(roundedValue);
 
     cout << "Change from: " << change_from << '\n';
     cout << "Change   to: " << change_to << '\n';
