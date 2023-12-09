@@ -7,15 +7,15 @@ using namespace std;
 class Rectangulo
 {
 private:
-	char base;
-	char altura;
+	string base;
+	string altura;
 	
 public:
 	Rectangulo();
-	Rectangulo(double, double);
+	Rectangulo(string, string);
 	~Rectangulo();
-	double getBase();
-	double getAltura();
+	string getBase();
+	string getAltura();
 	double Perimetro();
 	double Area();
 	void Dibujar();

@@ -4,7 +4,7 @@ Rectangulo::Rectangulo()
 {
 }
 
-Rectangulo::Rectangulo(double base, double altura)
+Rectangulo::Rectangulo(string base, string altura)
 {
 	this->base = base;
 	this->altura = altura;
@@ -14,12 +14,12 @@ Rectangulo::~Rectangulo()
 {
 }
 
-double Rectangulo::getBase()
+string Rectangulo::getBase()
 {
 	return base;
 }
 
-double Rectangulo::getAltura()
+string Rectangulo::getAltura()
 {
 	return altura;
 }
@@ -27,14 +27,14 @@ double Rectangulo::getAltura()
 double Rectangulo::Perimetro()
 {
 	double perimetro = 0;
-	perimetro = 2 * (double( base) + double (altura));
+	//perimetro = 2 * (double( base) + double (altura));
 	return perimetro;
 }
 
 double Rectangulo::Area()
 {
 	double area = 0;
-	area = double(base) *double (altura);
+	//area = double(base) *double (altura);
 	return area;
 }
 
@@ -57,11 +57,11 @@ void Rectangulo::Dibujar()
 void Rectangulo::modify()
 {
     char change_from = '?';
-    double roundedValue = round(base);
-    char change_to=char(roundedValue);
+   // double roundedValue = round(base);
+   
 
     cout << "Change from: " << change_from << '\n';
-    cout << "Change   to: " << change_to << '\n';
+    cout << "Change   to: " << base << '\n';
 
     // SOURCE FILE
     ifstream file_from;
@@ -89,14 +89,14 @@ void Rectangulo::modify()
     {
         if (ch_read == change_from)
         {
-            file_to << change_to;
+            file_to << base;
         }
         else
         {
             file_to << ch_read;
         }
     }
-    Dibujar2();
+   
     cout << "Done\n";
 }
 
