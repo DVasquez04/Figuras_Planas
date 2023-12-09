@@ -42,59 +42,55 @@ void Rectangulo::Dibujar()
 {
 	string line;
 	ifstream MyFile("Rectangulo.txt");
-	vector<char> bytes;
-	char byte = 0;
-    while (MyFile.get(byte)) {
-        bytes.push_back(byte);
-    }
+	if (MyFile.is_open()) {
+		while (getline(MyFile, line)) {
+			cout << line << '\n';
+		}
+		MyFile.close();
+	}
+	else {
+		cout << "Unable to open file\n";
+	}
+    
+}
 
-    // Find indices to replace
-    vector<size_t> replaceIndices;
-    for (size_t i = 0; i < bytes.size(); ++i) {
-        if (bytes[i] == '&') {
-            replaceIndices.push_back(i);
-        }
-        else if (bytes[i] == '?') {
-            replaceIndices.push_back(i);
-        }
-        else if (bytes[i] == '%') {
-            replaceIndices.push_back(i);
-        }
-        else if (bytes[i] == '@') {
-            replaceIndices.push_back(i);
-        }
-        else if (bytes[i] == '#') {
-            replaceIndices.push_back(i);
-        }
-    }
+void Rectangulo::modify()
+{
+	std::fstream yourfile;
+	std::string line, someString;
 
-    // Replace values at the found indices
-    for (auto index : replaceIndices) {
-        if (bytes[index] == '&') {
-            bytes[index] = (char)altura;
-        }
-        else if (bytes[index] == '?') {
-            bytes[index] = (char)base;
-        }
-        else if (bytes[index] == '%') {
-            double suma = base + altura;
-            bytes[index] = (char)suma;
-        }
-        else if (bytes[index] == '@') {
-            double result = 2 * (base + altura);
-            bytes[index] = (char)result;
-        }
-        else if (bytes[index] == '#') {
-            double result = base * altura;
-            bytes[index] = (char)result;
-        }
-    }
+	yourfile.open("Rectangulo.txt", ios::in | ios::app);  //The path to your file goes here
 
-    // Print the modified vector
-    for (auto i : bytes) {
-        cout << i;
-    }
-    cout << endl;
+	if (yourfile.is_open()) {  //You don't have to ask if the file is open but it's more secure
+		while (getline(yourfile, line)) {
+			if (line.find(someString) != string::npos) { //the find() documentation might be helpful if you don't understand
+				if (someString == "&") {
+					yourfile << altura;
+					cout << "Hace algo esta mierda??" << endl;
+				}
+				else if (someString == "?") {
+					yourfile << base;
+				}
+				else if (someString == "%") {
+					double result = base + altura;
+					yourfile << result;
+				}
+				else if (someString == "@") {
+					double result = 2 * (base + altura);
+					yourfile << result;
+				}
+				else if (someString == "#") {
+					double result = base * altura;
+					yourfile << result;
+				}
+				else {
+					cout << "no entra" << endl;
+				}
+			} //end if
+		} //end while
+		Dibujar();
+	} //end ifz
+	else cerr << "Your file couldn't be opened";
 
-    MyFile.close();
+	yourfile.close();
 }

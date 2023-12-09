@@ -9,4 +9,6 @@ int main(int argc, char* argv[]) {
     SetConsoleOutputCP(CP_UTF8);
     Rectangulo r( 10, 5);
     r.Dibujar();
+    r.modify();
+    
 }

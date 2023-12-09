@@ -19,5 +19,6 @@ public:
 	double Perimetro();
 	double Area();
 	void Dibujar();
+	void modify();
 };
 
