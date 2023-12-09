@@ -7,8 +7,8 @@ using namespace std;
 class Rectangulo
 {
 private:
-	double base;
-	double altura;
+	char base;
+	char altura;
 	
 public:
 	Rectangulo();
