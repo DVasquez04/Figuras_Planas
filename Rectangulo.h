@@ -20,5 +20,6 @@ public:
 	double Area();
 	void Dibujar();
 	void modify();
+	void Dibujar2();
 };
 

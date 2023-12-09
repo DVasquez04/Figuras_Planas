@@ -56,41 +56,62 @@ void Rectangulo::Dibujar()
 
 void Rectangulo::modify()
 {
-	std::fstream yourfile;
-	std::string line, someString;
+    char change_from = '?';
+    double roundedValue = round(base);
 
-	yourfile.open("Rectangulo.txt", ios::in | ios::app);  //The path to your file goes here
+    char change_to = '5';
 
-	if (yourfile.is_open()) {  //You don't have to ask if the file is open but it's more secure
-		while (getline(yourfile, line)) {
-			if (line.find(someString) != string::npos) { //the find() documentation might be helpful if you don't understand
-				if (someString == "&") {
-					yourfile << altura;
-					cout << "Hace algo esta mierda??" << endl;
-				}
-				else if (someString == "?") {
-					yourfile << base;
-				}
-				else if (someString == "%") {
-					double result = base + altura;
-					yourfile << result;
-				}
-				else if (someString == "@") {
-					double result = 2 * (base + altura);
-					yourfile << result;
-				}
-				else if (someString == "#") {
-					double result = base * altura;
-					yourfile << result;
-				}
-				else {
-					cout << "no entra" << endl;
-				}
-			} //end if
-		} //end while
-		Dibujar();
-	} //end ifz
-	else cerr << "Your file couldn't be opened";
+    cout << "Change from: " << change_from << '\n';
+    cout << "Change   to: " << change_to << '\n';
 
-	yourfile.close();
+    // SOURCE FILE
+    ifstream file_from;
+    file_from.open("Rectangulo.txt");
+
+    if (file_from.fail())
+    {
+        cout << "Error opening file1: ";
+        exit(1);
+    }
+
+    // DESTINATION FILE
+    ofstream file_to;
+    file_to.open("Rectangulo2.txt");
+
+    if (file_to.fail())
+    {
+        cout << "Error opening file: ";
+        exit(2);
+    }
+
+    // PROCESS CHARACTER AT A TIME
+    char ch_read;
+    while (file_from.get(ch_read))
+    {
+        if (ch_read == change_from)
+        {
+            file_to << change_to;
+        }
+        else
+        {
+            file_to << ch_read;
+        }
+    }
+    Dibujar2();
+    cout << "Done\n";
+}
+
+void Rectangulo::Dibujar2()
+{
+	string line;
+	ifstream MyFile("Rectangulo2.txt");
+	if (MyFile.is_open()) {
+		while (getline(MyFile, line)) {
+			cout << line << '\n';
+		}
+		MyFile.close();
+	}
+	else {
+		cout << "Unable to open file\n";
+	}
 }
