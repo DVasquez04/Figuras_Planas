@@ -58,8 +58,8 @@ void Rectangulo::modify()
 {
     char change_from = '?';
     double roundedValue = round(base);
-
-    char change_to = '5';
+    char change_to[sizeof(roundedValue)];
+    memcpy(change_to, &roundedValue, sizeof(roundedValue));
 
     cout << "Change from: " << change_from << '\n';
     cout << "Change   to: " << change_to << '\n';
