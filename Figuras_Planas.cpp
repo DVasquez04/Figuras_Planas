@@ -110,9 +110,9 @@ void Accion(int cont, char* argv[]) {
         }
         else {
             //esto para validar
-            string value;
-            int a = 0, b = 0;
-            for (int i = 2; i < cont; i++) {
+            //string value;
+            string a = argv[2], b = argv[3];
+            /*for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
                     if (esNumero(value))
@@ -123,9 +123,13 @@ void Accion(int cont, char* argv[]) {
                     if (esNumero(value))
                         b = stoi(value);
                 }
-            }
-            cout << "a: " << a << endl;
-            cout << "b: " << b << endl;
+            }*/
+            Rectangulo r( a, b);
+            r.Dibujar("Rectangulo.txt");
+            r.modify();
+            r.Dibujar("Rectangulo2.txt");
+            //cout << "a: " << a << endl;
+            //cout << "b: " << b << endl;
         }
     }
     else if (Tipo == "cuadrado") {
