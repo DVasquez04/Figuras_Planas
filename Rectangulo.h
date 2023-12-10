@@ -16,8 +16,9 @@ public:
 	~Rectangulo();
 	string getBase();
 	string getAltura();
-	double Perimetro();
-	double Area();
+	int Perimetro();
+	int Area();
+	string suma();
 	void Dibujar(string);
 	void modify();
 	void modify2(char, string);

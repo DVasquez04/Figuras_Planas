@@ -24,18 +24,26 @@ string Rectangulo::getAltura()
 	return altura;
 }
 
-double Rectangulo::Perimetro()
+int Rectangulo::Perimetro()
 {
-	double perimetro = 0;
-	perimetro = 2 * (stod( base) + stod(altura));
+	int perimetro = 0;
+	perimetro = 2 * (stoi( base) + stoi(altura));
 	return perimetro;
 }
 
-double Rectangulo::Area()
+int Rectangulo::Area()
 {
 	double area = 0;
-	area = stod(base) * stod(altura);
+	area = stoi(base) * stoi(altura);
 	return area;
+}
+
+string Rectangulo::suma()
+{
+    int sum = 0;
+    sum = stoi(base) + stoi(altura);
+    string suma = to_string(sum);
+    return suma;
 }
 
 void Rectangulo::Dibujar(string nombre)
@@ -70,9 +78,9 @@ void Rectangulo::modify2(char change_from, string base)
     string temp = base;
     ifstream file_from;
     file_from.open("Rectangulo.txt");
-    double p = Perimetro();
+    int p = Perimetro();
     string perimetro = to_string(p);
-    double a = Area();
+    int a = Area();
     string area = to_string(a);
     if (file_from.fail())
     {
@@ -115,7 +123,7 @@ void Rectangulo::modify2(char change_from, string base)
                         }
                     }
                 }
-                else {
+                else if(ch_read == change_from){
                     temp = base;
                     for (int i = 0; i < temp.size(); ++i) {
                         if (temp.size() == 1)
@@ -135,14 +143,161 @@ void Rectangulo::modify2(char change_from, string base)
                         }
                     }
                 }
+                else if (ch_read == '%') {
+                    temp = suma();
+                    for (int i = 0; i < temp.size(); ++i) {
+                        if (temp.size() == 1)
+                        {
+                            file_to << " " << temp[i];
+                        }
+                        else if (temp.size() == 2) {
+                            if (i == 0) {
+                                file_to << " " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else if (temp.size() == 3) {
+                            if (i == 0) {
+                                file_to << " " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else {
+                            file_to << temp[i];
+                        }
+                    }
+                }
+                else if (ch_read == '@') {
+                        temp = perimetro;
+                        for (int i = 0; i < temp.size(); ++i) {
+                            if (temp.size() == 1)
+                            {
+                                file_to << " " << temp[i];
+                            }
+                            else if (temp.size() == 2) {
+                                if (i == 0) {
+                                    file_to << " " << temp[i];
+                                }
+                                else {
+                                    file_to << temp[i];
+                                }
+                            }
+                            else if (temp.size() == 3) {
+                                if (i == 0) {
+                                    file_to << " " << temp[i];
+                                }
+                                else {
+                                    file_to << temp[i];
+                                }
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+
+                }
+                else if (ch_read == '#') {
+                    temp = area;
+                    for (int i = 0; i < temp.size(); ++i) {
+                        if (temp.size() == 1)
+                        {
+                            file_to << "   " << temp[i];
+                        }
+                        else if (temp.size() == 2) {
+                            if (i == 0) {
+                                file_to << "  " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else if (temp.size() == 3) {
+                            if (i == 0) {
+                                file_to << "  " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else if (temp.size() == 4) {
+                            if (i == 0) {
+                                file_to << " " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else if (temp.size() == 5) {
+                            if (i == 0) {
+                                file_to << " " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else {
+                            file_to << temp[i];
+                        }
+                    }
+
+                }
                 primerCaracterEncontrado = true;  // Indicar que ya se encontró el primer carácter
             }
             else if ((ch_read == change_from || ch_read == '&' || ch_read == '%' || ch_read == '@' || ch_read == '#') && primerCaracterEncontrado) {
-                if (temp.size() == 1 && cont == false ) {
-                    file_to << " ";
-                }
-                else {
-                    file_to << "";
+                switch (temp.size()) {
+                    case 1:
+                        if (cont == false && (ch_read == change_from || ch_read == '&'))
+                        {
+                            file_to << " ";
+                        }
+                        else if (cont == false &&( ch_read == '%' || ch_read == '@')) {
+                            file_to << "  ";
+                        }
+                        break;
+                    case 2:
+                        if (cont == false &&( ch_read == change_from || ch_read == '&'))
+                        {
+                            file_to << "";
+                        }
+                        else if (cont == false &&( ch_read == '%' || ch_read == '@')) {
+                            file_to << " ";
+                        }
+                        break;
+                    case 3:
+                        if (cont == false &&( ch_read == change_from || ch_read == '&'))
+                        {
+                            file_to << "";
+                        }
+                        else if (cont == false && (ch_read == '%' || ch_read == '@')) {
+                            file_to << "";
+                        }
+                        else if (cont == false && ch_read == '#') {
+                            file_to << " ";
+                        }
+                        break;
+                    case 4:
+                        if (cont == false && (ch_read == '%' || ch_read == '@'))
+                        {
+                            file_to << "";
+                        }
+                        else if (cont == false && ch_read == '#' ) {
+                            file_to << " ";
+                        }
+                        break;
+                    case 5:
+                        if (cont == false && ch_read == '#') {
+                            file_to << "";
+                        }
+                        break;
+                    case 6:
+                        if (cont == false && ch_read == '#') {
+                            file_to << "";
+                        }
+                        break;
                 }
                 cont = true;
             }
