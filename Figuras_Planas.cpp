@@ -293,8 +293,4 @@ int main(int argc, char* argv[]) {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
     Accion(argc, argv);
-    /*Rectangulo r( "1", "1");
-    r.Dibujar("Rectangulo.txt");
-    r.modify(); 
-    r.Dibujar("Rectangulo2.txt");*/
 }

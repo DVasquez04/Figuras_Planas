@@ -1,19 +1,28 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 class Trapecio
 {
 private:
-	double base;
-	double altura;
+	string base;
+	string altura;
+	string base2;
+	string d1;
+	string d2;
 
 public:
 	Trapecio();
-	Trapecio(double, double);
+	Trapecio(string,string,string,string,string);
 	~Trapecio();
-	double getBase();
-	double getAltura();
-	double Perimetro();
-	double Area();
+	string Perimetro();
+	string Area();
 	void Dibujar();
+	string suma();
+	void Dibujar2();
+	void modify();
+	void modify2(char, string);
 };
 
 
