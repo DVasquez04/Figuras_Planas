@@ -57,10 +57,17 @@ void Rectangulo::Dibujar(string nombre)
 void Rectangulo::modify()
 {
     char change_from = '?';
-    int size = base.size();
-    cout << "size:" << size << endl;
     cout << "Change from: " << change_from << '\n';
     cout << "Change   to: " << base << '\n';
+    bool modified = false;
+   
+    modify2('?', base);
+    
+    
+}
+void Rectangulo::modify2(char change_from, string base)
+{
+    string temp = base;
     ifstream file_from;
     file_from.open("Rectangulo.txt");
 
@@ -76,37 +83,51 @@ void Rectangulo::modify()
         cout << "Error opening file: ";
         exit(2);
     }
+    int size = base.size();
     char ch_read;
-   bool primerCaracterEncontrado = false;
-   bool cont = false;
+    bool primerCaracterEncontrado = false;
+    bool cont = false;
     while (file_from.get(ch_read)) {
-        if (ch_read == change_from && !primerCaracterEncontrado) {
-            for (int i = 0; i < size; ++i) {
-               
-                    file_to << base[i];
+       
+            if ((ch_read == change_from||ch_read=='&') && !primerCaracterEncontrado) {
+                if (ch_read=='&')
+                {
+                    temp = altura;
+                    for (int i = 0; i < size; ++i) {
+
+                        file_to << temp[i];
+                    }
+                }
+                else {
+                    temp = base;
+                    for (int i = 0; i < size; ++i) {
+
+                        file_to << temp[i];
+                    }
+                }
+                primerCaracterEncontrado = true;  // Indicar que ya se encontró el primer carácter
             }
-            primerCaracterEncontrado = true;  // Indicar que ya se encontró el primer carácter
-        }
-        else if (ch_read == change_from && primerCaracterEncontrado) {
-            if(size==1&&cont==false){
-                file_to << "  ";
-            }else if(size == 2 && cont == false) {
-                file_to << " ";
+            else if ((ch_read == change_from || ch_read == '&') && primerCaracterEncontrado) {
+                if (size == 1 && cont == false) {
+                    file_to << "  ";
+                }
+                else if (size == 2 && cont == false) {
+                    file_to << " ";
+                }
+                else {
+                    file_to << "";
+                }
+                cont = true;
             }
             else {
-                file_to << "";
+                cont = false;
+                file_to << ch_read;
+                primerCaracterEncontrado = false;
             }
-            cont=true;
-        }
-        else {
-            cont=false;
-            file_to << ch_read;
-            primerCaracterEncontrado = false;
-        }
-
     }
-
-  
 }
+
+
+
 
 
