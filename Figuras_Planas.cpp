@@ -295,8 +295,8 @@ int main(int argc, char* argv[]) {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
     ///Accion(argc, argv); 
-    Cuadrado c("150");
-    c.Dibujar("Cuadrado.txt");
+    Cometa c("12", "13", "50", "999");
+    c.Dibujar("Cometa.txt");
     c.modify();
     c.Dibujar2();
 }
