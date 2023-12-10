@@ -4,13 +4,13 @@
 #include <string>
 using namespace std;
 class Cuadrado{
-	int a;
+	string a;
 public:
 	Cuadrado();
-	Cuadrado(int);
+	Cuadrado(string);
 	~Cuadrado();
-	int Area();
-	int Perimetro();
-	void Dibujar();
+	string Area();
+	string Perimetro();
+	void Dibujar(string);
 };
 

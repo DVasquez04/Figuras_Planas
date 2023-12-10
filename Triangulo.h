@@ -1,13 +1,17 @@
 #pragma once
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
 class Triangulo{
-	int a, b, c, h;
+	string a, b, c, h;
 public:
 	Triangulo();
-	Triangulo(int, int, int, int);
+	Triangulo(string, string, string, string);
 	~Triangulo();
-	double Area();
-	int Perimetro();
-	void Dibujar();
+	string Area();
+	string Perimetro();
+	void Dibujar(string);
 
 };
 

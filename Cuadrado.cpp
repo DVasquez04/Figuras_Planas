@@ -1,24 +1,33 @@
 #include "Cuadrado.h"
 Cuadrado::Cuadrado() {}
-Cuadrado::Cuadrado(int a) {
+Cuadrado::Cuadrado(string a) {
 	this->a = a;
 }
 Cuadrado::~Cuadrado() {}
-int Cuadrado::Area() {
+string Cuadrado::Area() {
 	int area;
-	area = (a * a);
-	return area;
+	string sArea;
+	area = (std::stoi(a) * std::stoi(a));
+	sArea = to_string(area);
+	return sArea;
 }
-int Cuadrado::Perimetro() {
+string Cuadrado::Perimetro() {
 	int perimetro;
-	perimetro = (4 * a);
-	return perimetro;
+	string sPeri;
+	perimetro = (4 * stoi(a));
+	sPeri = to_string(perimetro);
+	return sPeri;
 }
-void Cuadrado::Dibujar() {
+void Cuadrado::Dibujar(string nombre) {
 	string line;
-	ifstream MyFile("Cuadrado.txt");
-	while (getline(MyFile, line)) {
-		cout << line << "\n";
+	ifstream MyFile(nombre);
+	if (MyFile.is_open()) {
+		while (getline(MyFile, line)) {
+			cout << line << '\n';
+		}
+		MyFile.close();
 	}
-	MyFile.close();
+	else {
+		cout << "Unable to open file\n";
+	}
 }
