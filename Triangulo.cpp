@@ -192,7 +192,7 @@ void Triangulo::modify2(char change_from, string base)
                     }
                     else if (temp.size() == 2) {
                         if (i == 0) {
-                            file_to << "  " << temp[i];
+                            file_to << "   " << temp[i];
                         }
                         else {
                             file_to << temp[i];
