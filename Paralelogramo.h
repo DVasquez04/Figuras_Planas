@@ -6,19 +6,23 @@ using namespace std;
 class Paralelogramo
 {
 private:
-	double base;
-	double altura;
-	double diagonal;
-	
+	string base;
+	string altura;
+	string diagonal;
+
 public:
 	Paralelogramo();
-	Paralelogramo(double, double, double);
+	Paralelogramo(string, string, string);
 	~Paralelogramo();
-	double getBase();
-	double getAltura();
-	double getDiagonal();
-	double Perimetro();
-	double Area();
+	string getBase();
+	string getAltura();
+	string getDiagonal();
+	string Perimetro();
+	string Area();
 	void Dibujar();
+	void Dibujar2();
+	void modify();
+	void modify2(char, string);
+	string suma();
 };
 
