@@ -4,6 +4,11 @@
 #include "Cuadrado.h"
 #include <windows.h>
 #include "Rectangulo.h"
+#include "Triangulo.h"
+#include "Rombo.h"
+#include "Cometa.h"
+#include "Trapecio.h"
+#include "Circulo.h"
 using namespace std;
 bool esNumero(string str) {
     try {
@@ -41,33 +46,33 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int a = 0, b = 0, c = 0, h = 0;
+            string a = "0", b = "0", c = "0", h = "0";
             for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
                     if (esNumero(value))
-                        a = stoi(value);
+                        a = value;
                 }
                 else if (i == 3) {
                     value = argv[i];
                     if (esNumero(value))
-                        b = stoi(value);
+                        b = value;
                 }
                 else if (i == 4) {
                     value = argv[i];
                     if (esNumero(value))
-                        c = stoi(value);
+                        c = value;
                 }
                 else {
                     value = argv[i];
                     if (esNumero(value))
-                        h = stoi(value);
+                        h = value;
                 }
             }
-            cout << "a: " << a << endl;
-            cout << "b: " << b << endl;
-            cout << "c: " << c << endl;
-            cout << "h: " << h << endl;
+            /*Triangulo t(a, b, c, h);
+            t.Dibujar();
+            t.modify();
+            t.Dibujar();*/
         }
     }
     else if (Tipo == "paralelogramo") {
@@ -79,27 +84,28 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int a = 0, b = 0, h = 0;
+            string a = "0", b = "0", h = "0";
             for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
                     if (esNumero(value))
-                        a = stoi(value);
+                        a = value;
                 }
                 else if (i == 3) {
                     value = argv[i];
                     if (esNumero(value))
-                        b = stoi(value);
+                        b = value;
                 }
                 else {
                     value = argv[i];
                     if (esNumero(value))
-                        h = stoi(value);
+                        h = value;
                 }
             }
-            cout << "a: " << a << endl;
-            cout << "b: " << b << endl;
-            cout << "h: " << h << endl;
+            Paralelogramo p(a, b, h);
+            p.Dibujar();
+            p.modify();
+            p.Dibujar();
         }
     }
     else if (Tipo == "rectangulo") {
@@ -110,26 +116,26 @@ void Accion(int cont, char* argv[]) {
         }
         else {
             //esto para validar
-            //string value;
-            string a = argv[2], b = argv[3];
-            /*for (int i = 2; i < cont; i++) {
+            string value;
+            string a = "0", b = "0";
+            for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
-                    if (esNumero(value))
-                        a = stoi(value);
+                    if (esNumero(value)) {
+                        a = argv[2];
+                    }    
                 }
                 else {
                     value = argv[i];
-                    if (esNumero(value))
-                        b = stoi(value);
+                    if (esNumero(value)) {
+                        b = argv[3];
+                    }   
                 }
-            }*/
-            Rectangulo r( a, b);
+            }
+            Rectangulo r(a, b);
             r.Dibujar("Rectangulo.txt");
             r.modify();
             r.Dibujar("Rectangulo2.txt");
-            //cout << "a: " << a << endl;
-            //cout << "b: " << b << endl;
         }
     }
     else if (Tipo == "cuadrado") {
@@ -140,11 +146,14 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int a = 0;
+            string a = "0";
             value = argv[2];
             if (esNumero(value))
-                a = stoi(value);
-            cout << "a: " << a << endl;
+                a = value;
+            /*Cuadrado c(a);
+            c.Dibujar();
+            c.modify();
+            c.Dibujar();*/
         }
     }
     else if (Tipo == "rombo") {
@@ -155,27 +164,28 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int a = 0, d = 0, D = 0;
+            string a = "0", d = "0", D = "0";
             for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
                     if (esNumero(value))
-                        a = stoi(value);
+                        a = value;
                 }
                 else if (i == 3) {
                     value = argv[i];
                     if (esNumero(value))
-                        d = stoi(value);
+                        d = value;
                 }
                 else {
                     value = argv[i];
                     if (esNumero(value))
-                        D = stoi(value);
+                        D = value;
                 }
             }
-            cout << "a: " << a << endl;
-            cout << "d: " << d << endl;
-            cout << "D: " << D << endl;
+            /*Rombo r(a, b, D);
+            r.Dibujar();
+            r.modify();
+            r.Dibujar();*/
         }
     }
     else if (Tipo == "cometa") {
@@ -186,33 +196,33 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int a = 0, b = 0, d = 0, D = 0;
+            string a = "0", b = "0", d = "0", D = "0";
             for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
                     if (esNumero(value))
-                        a = stoi(value);
+                        a = value;
                 }
                 else if (i == 3) {
                     value = argv[i];
                     if (esNumero(value))
-                        b = stoi(value);
+                        b = value;
                 }
                 else if (i == 4) {
                     value = argv[i];
                     if (esNumero(value))
-                        d = stoi(value);
+                        d = value;
                 }
                 else {
                     value = argv[i];
                     if (esNumero(value))
-                        D = stoi(value);
+                        D = value;
                 }
             }
-            cout << "a: " << a << endl;
-            cout << "b: " << b << endl;
-            cout << "d: " << d << endl;
-            cout << "D: " << D << endl;
+           /* Cometa c(a, b, d, D);
+            c.Dibujar();
+            c.modify();
+            c.Dibujar();*/
         }
     }
     else if (Tipo == "trapecio") {
@@ -223,39 +233,38 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int a = 0, b = 0, c = 0, h = 0, B = 0;
+            string a = "0", b = "0", c = "0", h = "0", B = "0";
             for (int i = 2; i < cont; i++) {
                 if (i == 2) {
                     value = argv[i];
                     if (esNumero(value))
-                        a = stoi(value);
+                        a = value;
                 }
                 else if (i == 3) {
                     value = argv[i];
                     if (esNumero(value))
-                        b = stoi(value);
+                        b = value;
                 }
                 else if (i == 4) {
                     value = argv[i];
                     if (esNumero(value))
-                        c = stoi(value);
+                        c = value;
                 }
                 else if (i == 5) {
                     value = argv[i];
                     if (esNumero(value))
-                        h = stoi(value);
+                        h = value;
                 }
                 else {
                     value = argv[i];
                     if (esNumero(value))
-                        B = stoi(value);
+                        B = value;
                 }
             }
-            cout << "a: " << a << endl;
-            cout << "b: " << b << endl;
-            cout << "c: " << c << endl;
-            cout << "h: " << h << endl;
-            cout << "B: " << B << endl;
+            /*Trapecio t(a, b, c, h, B);
+            t.Dibujar();
+            t.modify();
+            t.Dibujar();*/
         }
     }
     else if (Tipo == "circulo") {
@@ -266,11 +275,14 @@ void Accion(int cont, char* argv[]) {
         else {
             //esto para validar
             string value;
-            int r = 0;
+            string r = "0";
             value = argv[2];
             if (esNumero(value))
-                r = stoi(value);
-            cout << "r: " << r << endl;
+                r = value;
+            /*Circulo c(r);
+            c.Dibujar();
+            c.modify();
+            c.Dibujar();*/
         }
     }
     else {
