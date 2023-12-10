@@ -235,7 +235,7 @@ void Trapecio::modify2(char change_from, string base)
                     }
                     else if (temp.size() == 4) {
                         if (i == 0) {
-                            file_to << " " << temp[i];
+                            file_to << "  " << temp[i];
                         }
                         else {
                             file_to << temp[i];
@@ -260,7 +260,7 @@ void Trapecio::modify2(char change_from, string base)
                 for (int i = 0; i < temp.size(); ++i) {
                     if (temp.size() == 1)
                     {
-                        file_to << "  " << temp[i];
+                        file_to << "   " << temp[i];
                     }
                     else if (temp.size() == 2) {
                         if (i == 0) {
