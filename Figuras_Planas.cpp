@@ -69,10 +69,10 @@ void Accion(int cont, char* argv[]) {
                         h = value;
                 }
             }
-            /*Triangulo t(a, b, c, h);
-            t.Dibujar();
-            t.modify();
-            t.Dibujar();*/
+            Triangulo t(a, b, c, h);
+            t.Dibujar("Triangulo.txt");
+            //t.modify();
+            t.Dibujar("Triangulo2.txt");
         }
     }
     else if (Tipo == "paralelogramo") {
@@ -150,10 +150,10 @@ void Accion(int cont, char* argv[]) {
             value = argv[2];
             if (esNumero(value))
                 a = value;
-            /*Cuadrado c(a);
-            c.Dibujar();
-            c.modify();
-            c.Dibujar();*/
+            Cuadrado c(a);
+            c.Dibujar("Cuadrado.txt");
+            //c.modify();
+            c.Dibujar("Cuadrado2.txt");
         }
     }
     else if (Tipo == "rombo") {
@@ -182,10 +182,10 @@ void Accion(int cont, char* argv[]) {
                         D = value;
                 }
             }
-            /*Rombo r(a, b, D);
+            Rombo r(a, d, D);
             r.Dibujar();
             r.modify();
-            r.Dibujar();*/
+            r.Dibujar();
         }
     }
     else if (Tipo == "cometa") {
@@ -219,10 +219,10 @@ void Accion(int cont, char* argv[]) {
                         D = value;
                 }
             }
-           /* Cometa c(a, b, d, D);
-            c.Dibujar();
-            c.modify();
-            c.Dibujar();*/
+            Cometa c(a, b, d, D);
+            c.Dibujar("Cometa.txt");
+            //c.modify();
+            c.Dibujar("Cometa2.txt");
         }
     }
     else if (Tipo == "trapecio") {
@@ -279,10 +279,10 @@ void Accion(int cont, char* argv[]) {
             value = argv[2];
             if (esNumero(value))
                 r = value;
-            /*Circulo c(r);
-            c.Dibujar();
-            c.modify();
-            c.Dibujar();*/
+            Circulo c(r);
+            c.Dibujar("Circulo.txt");
+            //c.modify();
+            c.Dibujar("Circulo2.txt");
         }
     }
     else {
@@ -293,8 +293,4 @@ int main(int argc, char* argv[]) {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
     Accion(argc, argv);
-    /*Rectangulo r( "1", "1");
-    r.Dibujar("Rectangulo.txt");
-    r.modify();
-    r.Dibujar("Rectangulo2.txt");*/
 }
