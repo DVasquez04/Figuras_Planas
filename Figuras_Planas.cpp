@@ -102,7 +102,7 @@ void Accion(int cont, char* argv[]) {
                         h = value;
                 }
             }
-            Paralelogramo p(a, b, h);
+            Paralelogramo p(b, h, a);
             p.modify();
             p.Dibujar(); 
         }
@@ -131,7 +131,7 @@ void Accion(int cont, char* argv[]) {
                     }   
                 }
             }
-            Rectangulo r(a, b);
+            Rectangulo r(b, a);
             r.modify();
             r.Dibujar();
         }
@@ -179,7 +179,7 @@ void Accion(int cont, char* argv[]) {
                         D = value;
                 }
             }
-            Rombo r(a, d, D);
+            Rombo r(D, d, a);
             r.modify();
             r.Dibujar();
         }
@@ -256,7 +256,7 @@ void Accion(int cont, char* argv[]) {
                         B = value;
                 }
             }
-            Trapecio t(a, b, c, h, B);
+            Trapecio t(B, h, a, c, b);
             t.modify();
             t.Dibujar();
         }
