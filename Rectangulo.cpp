@@ -57,13 +57,10 @@ void Rectangulo::Dibujar(string nombre)
 void Rectangulo::modify()
 {
     char change_from = '?';
-   // double roundedValue = round(base);
-   
-
+    int size = base.size();
+    cout << "size:" << size << endl;
     cout << "Change from: " << change_from << '\n';
     cout << "Change   to: " << base << '\n';
-
-    // SOURCE FILE
     ifstream file_from;
     file_from.open("Rectangulo.txt");
 
@@ -72,32 +69,44 @@ void Rectangulo::modify()
         cout << "Error opening file1: ";
         exit(1);
     }
-
-    // DESTINATION FILE
     ofstream file_to;
     file_to.open("Rectangulo2.txt");
-
     if (file_to.fail())
     {
         cout << "Error opening file: ";
         exit(2);
     }
-
-    // PROCESS CHARACTER AT A TIME
     char ch_read;
-    while (file_from.get(ch_read))
-    {
-        if (ch_read == change_from)
-        {
-            file_to << base;
+   bool primerCaracterEncontrado = false;
+   bool cont = false;
+    while (file_from.get(ch_read)) {
+        if (ch_read == change_from && !primerCaracterEncontrado) {
+            for (int i = 0; i < size; ++i) {
+               
+                    file_to << base[i];
+            }
+            primerCaracterEncontrado = true;  // Indicar que ya se encontró el primer carácter
         }
-        else
-        {
+        else if (ch_read == change_from && primerCaracterEncontrado) {
+            if(size==1&&cont==false){
+                file_to << "xx";
+            }else if(size == 2 && cont == false) {
+                file_to << "x";
+            }
+            else {
+                file_to << "";
+            }
+            cont=true;
+        }
+        else {
+            cont=false;
             file_to << ch_read;
+            primerCaracterEncontrado = false;
         }
+
     }
-   
-    cout << "Done\n";
+
+  
 }
 
 
