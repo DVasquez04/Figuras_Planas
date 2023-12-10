@@ -27,14 +27,14 @@ string Rectangulo::getAltura()
 double Rectangulo::Perimetro()
 {
 	double perimetro = 0;
-	//perimetro = 2 * (double( base) + double (altura));
+	perimetro = 2 * (stod( base) + stod(altura));
 	return perimetro;
 }
 
 double Rectangulo::Area()
 {
 	double area = 0;
-	//area = double(base) *double (altura);
+	area = stod(base) * stod(altura);
 	return area;
 }
 
@@ -70,7 +70,10 @@ void Rectangulo::modify2(char change_from, string base)
     string temp = base;
     ifstream file_from;
     file_from.open("Rectangulo.txt");
-
+    double p = Perimetro();
+    string perimetro = to_string(p);
+    double a = Area();
+    string area = to_string(a);
     if (file_from.fail())
     {
         cout << "Error opening file1: ";
@@ -83,35 +86,59 @@ void Rectangulo::modify2(char change_from, string base)
         cout << "Error opening file: ";
         exit(2);
     }
-    int size = base.size();
+  
     char ch_read;
     bool primerCaracterEncontrado = false;
     bool cont = false;
+   
     while (file_from.get(ch_read)) {
-       
-            if ((ch_read == change_from||ch_read=='&') && !primerCaracterEncontrado) {
+        
+            if ((ch_read == change_from||ch_read=='&'||ch_read=='%'||ch_read=='@'||ch_read=='#') && !primerCaracterEncontrado) {
                 if (ch_read=='&')
                 {
                     temp = altura;
-                    for (int i = 0; i < size; ++i) {
-
-                        file_to << temp[i];
+                    for (int i = 0; i < temp.size(); ++i) {
+                        if (temp.size()==1)
+                        {
+                            file_to <<" " << temp[i];
+                        }
+                        else if (temp.size() == 2){
+                            if (i == 0) {
+                                file_to << " " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else {
+                            file_to << temp[i];
+                        }
                     }
                 }
                 else {
                     temp = base;
-                    for (int i = 0; i < size; ++i) {
-
-                        file_to << temp[i];
+                    for (int i = 0; i < temp.size(); ++i) {
+                        if (temp.size() == 1)
+                        {
+                            file_to << " " << temp[i];
+                        }
+                        else if (temp.size() == 2) {
+                            if (i == 0) {
+                                file_to << " " << temp[i];
+                            }
+                            else {
+                                file_to << temp[i];
+                            }
+                        }
+                        else {
+                            file_to << temp[i];
+                        }
                     }
                 }
                 primerCaracterEncontrado = true;  // Indicar que ya se encontró el primer carácter
             }
-            else if ((ch_read == change_from || ch_read == '&') && primerCaracterEncontrado) {
-                if (size == 1 && cont == false) {
-                    file_to << "  ";
-                }
-                else if (size == 2 && cont == false) {
+            else if ((ch_read == change_from || ch_read == '&' || ch_read == '%' || ch_read == '@' || ch_read == '#') && primerCaracterEncontrado) {
+                if (temp.size() == 1 && cont == false ) {
                     file_to << " ";
                 }
                 else {
