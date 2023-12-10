@@ -19,7 +19,7 @@ public:
 	int Perimetro();
 	int Area();
 	string suma();
-	void Dibujar(string);
+	void Dibujar();
 	void modify();
 	void modify2(char, string);
 	

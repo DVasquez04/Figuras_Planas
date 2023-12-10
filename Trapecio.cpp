@@ -33,23 +33,13 @@ string Trapecio::Area()
 	return result;
 }
 
-void Trapecio::Dibujar()
-{
-	string line;
-	ifstream MyFile("Trapecio.txt");
-	while (getline(MyFile, line)) {
-		cout << line << '\n';
-	}
-	MyFile.close();
-}
-
 string Trapecio::suma()
 {
 	int sum = (stoi(base) + stoi(base2)) * stoi(altura);
 	string result = to_string(sum);
 	return result;
 }
-void Trapecio::Dibujar2()
+void Trapecio::Dibujar()
 {
 	string line;
 	ifstream MyFile("Trapecio2.txt");

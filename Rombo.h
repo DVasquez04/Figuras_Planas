@@ -22,7 +22,6 @@ public:
 	string Area();
 	string mult();
 	void Dibujar();
-	void Dibujar2();
 	void modify();
 	void modify2(char, string);
 };

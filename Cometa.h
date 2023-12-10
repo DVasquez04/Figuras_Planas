@@ -11,10 +11,9 @@ public:
 	~Cometa();
 	string Area();
 	string Perimetro();
-	void Dibujar(string);
+	void Dibujar();
 	string mult();
 	string suma();
-	void Dibujar2();
 	void modify();
 	void modify2(char, string);
 };

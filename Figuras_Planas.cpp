@@ -71,9 +71,8 @@ void Accion(int cont, char* argv[]) {
                 }
             }
             Triangulo t(a, b, c, h);
-            t.Dibujar("Triangulo.txt");
-            //t.modify();
-            t.Dibujar("Triangulo2.txt");
+            t.modify();
+            t.Dibujar();
         }
     }
     else if (Tipo == "paralelogramo") {
@@ -104,9 +103,8 @@ void Accion(int cont, char* argv[]) {
                 }
             }
             Paralelogramo p(a, b, h);
-            p.Dibujar();
             p.modify();
-            p.Dibujar();
+            p.Dibujar(); 
         }
     }
     else if (Tipo == "rectangulo") {
@@ -134,9 +132,8 @@ void Accion(int cont, char* argv[]) {
                 }
             }
             Rectangulo r(a, b);
-            r.Dibujar("Rectangulo.txt");
             r.modify();
-            r.Dibujar("Rectangulo2.txt");
+            r.Dibujar();
         }
     }
     else if (Tipo == "cuadrado") {
@@ -152,9 +149,8 @@ void Accion(int cont, char* argv[]) {
             if (esNumero(value))
                 a = value;
             Cuadrado c(a);
-            c.Dibujar("Cuadrado.txt");
-            //c.modify();
-            c.Dibujar("Cuadrado2.txt");
+            c.modify();
+            c.Dibujar();
         }
     }
     else if (Tipo == "rombo") {
@@ -184,7 +180,6 @@ void Accion(int cont, char* argv[]) {
                 }
             }
             Rombo r(a, d, D);
-            r.Dibujar();
             r.modify();
             r.Dibujar();
         }
@@ -221,9 +216,8 @@ void Accion(int cont, char* argv[]) {
                 }
             }
             Cometa c(a, b, d, D);
-            c.Dibujar("Cometa.txt");
-            //c.modify();
-            c.Dibujar("Cometa2.txt");
+            c.modify();
+            c.Dibujar();
         }
     }
     else if (Tipo == "trapecio") {
@@ -262,10 +256,9 @@ void Accion(int cont, char* argv[]) {
                         B = value;
                 }
             }
-            /*Trapecio t(a, b, c, h, B);
-            t.Dibujar();
+            Trapecio t(a, b, c, h, B);
             t.modify();
-            t.Dibujar();*/
+            t.Dibujar();
         }
     }
     else if (Tipo == "circulo") {
@@ -281,9 +274,8 @@ void Accion(int cont, char* argv[]) {
             if (esNumero(value))
                 r = value;
             Circulo c(r);
-          //  c.Dibujar("Circulo.txt");
-            //c.modify();
-            //c.Dibujar("Circulo2.txt");
+            c.modify();
+            c.Dibujar();
         }
     }
     else {
@@ -291,12 +283,7 @@ void Accion(int cont, char* argv[]) {
     }
 }
 int main(int argc, char* argv[]) {
-    
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
-    ///Accion(argc, argv); 
-    Cometa c("12", "13", "50", "999");
-    c.Dibujar("Cometa.txt");
-    c.modify();
-    c.Dibujar2();
+    Accion(argc, argv); 
 }

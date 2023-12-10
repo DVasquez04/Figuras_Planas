@@ -11,9 +11,8 @@ public:
 	~Cuadrado();
 	string Area();
 	string Perimetro();
-	void Dibujar(string);
+	void Dibujar();
 	string elevado();
-	void Dibujar2();
 	void modify();
 	void modify2(char, string);
 };

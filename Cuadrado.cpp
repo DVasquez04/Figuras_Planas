@@ -18,19 +18,6 @@ string Cuadrado::Perimetro() {
 	sPeri = to_string(perimetro);
 	return sPeri;
 }
-void Cuadrado::Dibujar(string nombre) {
-	string line;
-	ifstream MyFile(nombre);
-	if (MyFile.is_open()) {
-		while (getline(MyFile, line)) {
-			cout << line << '\n';
-		}
-		MyFile.close();
-	}
-	else {
-		cout << "Unable to open file\n";
-	}
-}
 
 string Cuadrado::elevado()
 {
@@ -39,7 +26,7 @@ string Cuadrado::elevado()
 	return y;
 }
 
-void Cuadrado::Dibujar2()
+void Cuadrado::Dibujar()
 {
 	string line;
 	ifstream MyFile("Cuadrado2.txt");

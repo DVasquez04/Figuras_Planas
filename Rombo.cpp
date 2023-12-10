@@ -56,16 +56,6 @@ string Rombo::mult()
 void Rombo::Dibujar()
 {
 	string line;
-	ifstream MyFile("Rombo.txt");
-	while (getline(MyFile, line)) {
-		cout << line << '\n';
-	}
-	MyFile.close();
-}
-
-void Rombo::Dibujar2()
-{
-	string line;
 	ifstream MyFile("Rombo2.txt");
 	while (getline(MyFile, line)) {
 		cout << line << '\n';

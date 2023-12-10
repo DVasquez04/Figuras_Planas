@@ -21,28 +21,13 @@ string Circulo::Perimetro() {
 	return sPeri;
 }
 
-void Circulo::Dibujar(string nombre)
-{
-    string line;
-    ifstream MyFile(nombre);
-    if (MyFile.is_open()) {
-        while (getline(MyFile, line)) {
-            cout << line << '\n';
-        }
-        MyFile.close();
-    }
-    else {
-        cout << "Unable to open file\n";
-    }
-}
-
 string Circulo::elevado()
 {
 	int x = stoi(r) * stoi(r);
 	string y = to_string(x);
 	return y;
 }
-void Circulo::Dibujar2()
+void Circulo::Dibujar()
 {
 	string line;
 	ifstream MyFile("Circulo2.txt");

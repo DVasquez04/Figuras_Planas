@@ -21,9 +21,9 @@ string Triangulo::Perimetro() {
 	sPeri = to_string(perimetro);
 	return sPeri;
 }
-void Triangulo::Dibujar(string nombre) {
+void Triangulo::Dibujar() {
 	string line;
-	ifstream MyFile(nombre);
+	ifstream MyFile("Triangulo2.txt");
 	if (MyFile.is_open()) {
 		while (getline(MyFile, line)) {
 			cout << line << '\n';
@@ -40,22 +40,6 @@ string Triangulo::mult()
 	int x= stoi(b) * stoi(h);
 	string y = to_string(x);
 	return y;
-}
-
-void Triangulo::Dibujar2()
-{
-	string line;
-	ifstream MyFile("Triangulo2.txt");
-	if (MyFile.is_open()) {
-		while (getline(MyFile, line)) {
-			cout << line << '\n';
-		}
-		MyFile.close();
-	}
-	else {
-		cout << "Unable to open file\n";
-	}
-
 }
 
 void Triangulo::modify()

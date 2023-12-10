@@ -21,19 +21,6 @@ string Cometa::Perimetro() {
 	sPeri = to_string(perimetro);
 	return sPeri;
 }
-void Cometa::Dibujar(string nombre) {
-	string line;
-	ifstream MyFile(nombre);
-	if (MyFile.is_open()) {
-		while (getline(MyFile, line)) {
-			cout << line << '\n';
-		}
-		MyFile.close();
-	}
-	else {
-		cout << "Unable to open file\n";
-	}
-}
 
 string Cometa::mult()
 {
@@ -49,7 +36,7 @@ string Cometa::suma()
 	return y;
 }
 
-void Cometa::Dibujar2()
+void Cometa::Dibujar()
 {
 	string line;
 	ifstream MyFile("Cometa2.txt");

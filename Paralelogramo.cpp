@@ -51,16 +51,6 @@ string Paralelogramo::Area()
 void Paralelogramo::Dibujar()
 {
     string line;
-    ifstream MyFile("paralelogramo_01.txt");
-    while (getline(MyFile, line)) {
-        cout << line << '\n';
-    }
-    MyFile.close();
-}
-
-void Paralelogramo::Dibujar2()
-{
-    string line;
     ifstream MyFile("paralelogramo2.txt");
     while (getline(MyFile, line)) {
         cout << line << '\n';

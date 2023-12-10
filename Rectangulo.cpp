@@ -46,10 +46,10 @@ string Rectangulo::suma()
     return suma;
 }
 
-void Rectangulo::Dibujar(string nombre)
+void Rectangulo::Dibujar()
 {
 	string line;
-	ifstream MyFile(nombre);
+	ifstream MyFile("Rectangulo2.txt");
 	if (MyFile.is_open()) {
 		while (getline(MyFile, line)) {
 			cout << line << '\n';
