@@ -1,21 +1,29 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 class Rombo
 {
 private:
-	double diagonal;
-	double base;
-	double altura;
-	double area;
+	string diagonal;
+	string base;
+	string altura;
+	string area;
 	
 public:
 	Rombo();
-	Rombo(double, double);
+	Rombo(string,string,string);
 	~Rombo();
-	double getBase();
-	double getAltura();
-	double getDiagonal();
-	double Perimetro();
-	double Area();
+	string getBase();
+	string getAltura();
+	string getDiagonal();
+	string Perimetro();
+	string Area();
+	string mult();
 	void Dibujar();
+	void Dibujar2();
+	void modify();
+	void modify2(char, string);
 };
 
