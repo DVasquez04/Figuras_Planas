@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <vector>
 using namespace std;
 class Circulo{
 	string r;
@@ -11,7 +12,7 @@ public:
 	~Circulo();
 	string Area();
 	string Perimetro();
-	void Dibujar();
+	void Dibujar(string);
 	string elevado();
 	void Dibujar2();
 	void modify();

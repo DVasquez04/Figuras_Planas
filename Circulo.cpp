@@ -7,7 +7,7 @@ Circulo::~Circulo(){}
 string Circulo::Area() {
 	int area;
 	string sArea;
-	double pi = 3.14;
+	int pi = 3;
 	area = (pi * (stoi(r) * stoi(r)));
 	sArea = to_string(area);
 	return sArea;
@@ -15,18 +15,23 @@ string Circulo::Area() {
 string Circulo::Perimetro() {
 	int perimetro;
 	string sPeri;
-	double pi = 3.14;
+	int pi = 3;
 	perimetro = (2 * pi * stoi(r));
 	sPeri = perimetro;
 	return sPeri;
 }
-void Dibujar() {
+void Circulo::Dibujar(string nombre) {
     string line;
-    ifstream MyFile("Circulo.txt");
-    while (getline(MyFile, line)) {
-        cout << line << '\n';
+    ifstream MyFile(nombre);
+    if (MyFile.is_open()) {
+        while (getline(MyFile, line)) {
+            cout << line << '\n';
+        }
+        MyFile.close();
     }
-    MyFile.close();
+    else {
+        cout << "Unable to open file\n";
+    }
 }
 string Circulo::elevado()
 {
