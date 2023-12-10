@@ -257,6 +257,9 @@ void Rectangulo::modify2(char change_from, string base)
                         else if (cont == false &&( ch_read == '%' || ch_read == '@')) {
                             file_to << "  ";
                         }
+                        else if (cont == false && ch_read == '#') {
+                            file_to << "  ";
+                        }
                         break;
                     case 2:
                         if (cont == false &&( ch_read == change_from || ch_read == '&'))
@@ -265,6 +268,9 @@ void Rectangulo::modify2(char change_from, string base)
                         }
                         else if (cont == false &&( ch_read == '%' || ch_read == '@')) {
                             file_to << " ";
+                        }
+                        else if (cont == false && ch_read == '#') {
+                            file_to << "  ";
                         }
                         break;
                     case 3:
