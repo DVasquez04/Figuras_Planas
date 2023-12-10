@@ -1,12 +1,16 @@
 #pragma once
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
 class Cometa{
-	int a, b, d, D;
+	string a, b, d, D;
 public:
 	Cometa();
-	Cometa(int, int, int, int);
+	Cometa(string, string, string, string);
 	~Cometa();
-	double Area();
-	double Perimetro();
-	void Dibujar();
+	string Area();
+	string Perimetro();
+	void Dibujar(string);
 };
 

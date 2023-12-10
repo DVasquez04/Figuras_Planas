@@ -1,12 +1,16 @@
 #pragma once
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
 class Circulo{
-	int r;
+	string r;
 public:
 	Circulo();
-	Circulo(int);
+	Circulo(string);
 	~Circulo();
-	double Area();
-	double Perimetro();
-	void Dibujar();
+	string Area();
+	string Perimetro();
+	void Dibujar(string);
 };
 

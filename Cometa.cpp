@@ -1,22 +1,36 @@
 #include "Cometa.h"
 Cometa::Cometa(){}
-Cometa::Cometa(int a, int b, int d, int D) {
+Cometa::Cometa(string a, string b, string d, string D) {
 	this->a = a;
 	this->b = b;
 	this->d = d;
 	this->D = D;
 }
 Cometa::~Cometa() {}
-double Cometa::Area() {
+string Cometa::Area() {
 	double area;
-	area = (d * D) / 2;
-	return area;
+	string sArea;
+	area = (stoi(d) * stoi(D)) / 2;
+	sArea = to_string(area);
+	return sArea;
 }
-double Cometa::Perimetro() {
+string Cometa::Perimetro() {
 	double perimetro;
-	perimetro = (2 * (b + a));
-	return perimetro;
+	string sPeri;
+	perimetro = (2 * (stoi(b) + stoi(a)));
+	sPeri = perimetro;
+	return sPeri;
 }
-void Cometa::Dibujar() {
-
+void Cometa::Dibujar(string nombre) {
+	string line;
+	ifstream MyFile(nombre);
+	if (MyFile.is_open()) {
+		while (getline(MyFile, line)) {
+			cout << line << '\n';
+		}
+		MyFile.close();
+	}
+	else {
+		cout << "Unable to open file\n";
+	}
 }

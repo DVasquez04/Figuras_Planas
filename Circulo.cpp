@@ -1,21 +1,35 @@
 #include "Circulo.h"
 Circulo::Circulo(){}
-Circulo::Circulo(int r) {
+Circulo::Circulo(string r) {
 	this->r = r;
 }
 Circulo::~Circulo(){}
-double Circulo::Area() {
-	double area;
+string Circulo::Area() {
+	int area;
+	string sArea;
 	double pi = 3.14;
-	area = (pi * (r * r));
-	return area;
+	area = (pi * (stoi(r) * stoi(r)));
+	sArea = to_string(area);
+	return sArea;
 }
-double Circulo::Perimetro() {
-	double perimetro;
+string Circulo::Perimetro() {
+	int perimetro;
+	string sPeri;
 	double pi = 3.14;
-	perimetro = (2 * pi * r);
-	return perimetro;
+	perimetro = (2 * pi * stoi(r));
+	sPeri = perimetro;
+	return sPeri;
 }
-void Dibujar() {
-
+void Dibujar(string nombre) {
+	string line;
+	ifstream MyFile(nombre);
+	if (MyFile.is_open()) {
+		while (getline(MyFile, line)) {
+			cout << line << '\n';
+		}
+		MyFile.close();
+	}
+	else {
+		cout << "Unable to open file\n";
+	}
 }
