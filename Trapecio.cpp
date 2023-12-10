@@ -313,7 +313,7 @@ void Trapecio::modify2(char change_from, string base)
                     file_to << "  ";
                 }
                 else if (cont == false && (ch_read == '<' || ch_read == '%')) {
-                    file_to << " ";
+                    file_to << "  ";
                 }
                 break;
             case 2:

@@ -97,7 +97,7 @@ void Paralelogramo::modify2(char change_from, string base)
         if ((ch_read == change_from || ch_read == '!' || ch_read == '?' || ch_read == '$' || ch_read == '@' || ch_read == '#') && !primerCaracterEncontrado) {
             if (ch_read == '!')
             {
-                temp = altura;
+                temp = diagonal;
                 for (int i = 0; i < temp.size(); ++i) {
                     if (temp.size() == 1)
                     {
@@ -137,7 +137,7 @@ void Paralelogramo::modify2(char change_from, string base)
                 }
             }
             else if (ch_read == '?') {
-                temp = base;
+                temp = altura;
                 for (int i = 0; i < temp.size(); ++i) {
                     if (temp.size() == 1)
                     {
