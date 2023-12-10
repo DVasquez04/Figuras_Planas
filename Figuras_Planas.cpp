@@ -9,6 +9,7 @@
 #include "Cometa.h"
 #include "Trapecio.h"
 #include "Circulo.h"
+
 using namespace std;
 bool esNumero(string str) {
     try {
@@ -280,9 +281,9 @@ void Accion(int cont, char* argv[]) {
             if (esNumero(value))
                 r = value;
             Circulo c(r);
-            c.Dibujar("Circulo.txt");
+          //  c.Dibujar("Circulo.txt");
             //c.modify();
-            c.Dibujar("Circulo2.txt");
+            //c.Dibujar("Circulo2.txt");
         }
     }
     else {
@@ -290,7 +291,12 @@ void Accion(int cont, char* argv[]) {
     }
 }
 int main(int argc, char* argv[]) {
+    
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
-    Accion(argc, argv);
+    ///Accion(argc, argv); 
+    Circulo c("20");
+    c.Dibujar("Circulo.txt");
+    c.modify();
+    c.Dibujar2();
 }

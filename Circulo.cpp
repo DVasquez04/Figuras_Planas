@@ -17,10 +17,12 @@ string Circulo::Perimetro() {
 	string sPeri;
 	int pi = 3;
 	perimetro = (2 * pi * stoi(r));
-	sPeri = perimetro;
+	sPeri = to_string(perimetro);
 	return sPeri;
 }
-void Circulo::Dibujar(string nombre) {
+
+void Circulo::Dibujar(string nombre)
+{
     string line;
     ifstream MyFile(nombre);
     if (MyFile.is_open()) {
@@ -33,11 +35,12 @@ void Circulo::Dibujar(string nombre) {
         cout << "Unable to open file\n";
     }
 }
+
 string Circulo::elevado()
 {
 	int x = stoi(r) * stoi(r);
 	string y = to_string(x);
-	return string();
+	return y;
 }
 void Circulo::Dibujar2()
 {
@@ -78,7 +81,7 @@ void Circulo::modify2(char change_from, string base)
 
     while (file_from.get(ch_read)) {
 
-        if ((ch_read == change_from || ch_read == '¿'  || ch_read == '$' || ch_read == '!' || ch_read == '#') && !primerCaracterEncontrado) {
+        if ((ch_read == change_from || ch_read == '@'  || ch_read == '$' || ch_read == '!' || ch_read == '#') && !primerCaracterEncontrado) {
              if (ch_read == change_from) {
                 temp = base;
                 for (int i = 0; i < temp.size(); ++i) {
@@ -128,7 +131,7 @@ void Circulo::modify2(char change_from, string base)
                     }
                 }
             }
-            else if (ch_read == '¿') {         
+            else if (ch_read == '@') {         
                  temp = Perimetro();
                  for (int i = 0; i < temp.size(); ++i) {
                      if (temp.size() == 1)
@@ -161,11 +164,11 @@ void Circulo::modify2(char change_from, string base)
                 for (int i = 0; i < temp.size(); ++i) {
                     if (temp.size() == 1)
                     {
-                        file_to << "    " << temp[i];
+                        file_to << " " << temp[i];
                     }
                     else if (temp.size() == 2) {
                         if (i == 0) {
-                            file_to << "   " << temp[i];
+                            file_to << " " << temp[i];
                         }
                         else {
                             file_to << temp[i];
@@ -189,7 +192,7 @@ void Circulo::modify2(char change_from, string base)
                     }
                     else if (temp.size() == 5) {
                         if (i == 0) {
-                            file_to << " " << temp[i];
+                            file_to << "" << temp[i];
                         }
                         else {
                             file_to << temp[i];
@@ -206,7 +209,7 @@ void Circulo::modify2(char change_from, string base)
                 for (int i = 0; i < temp.size(); ++i) {
                     if (temp.size() == 1)
                     {
-                        file_to << "     " << temp[i];
+                        file_to << "  " << temp[i];
                     }
                     else if (temp.size() == 2) {
                         if (i == 0) {
@@ -218,7 +221,7 @@ void Circulo::modify2(char change_from, string base)
                     }
                     else if (temp.size() == 3) {
                         if (i == 0) {
-                            file_to << "   " << temp[i];
+                            file_to << "  " << temp[i];
                         }
                         else {
                             file_to << temp[i];
@@ -234,7 +237,7 @@ void Circulo::modify2(char change_from, string base)
                     }
                     else if (temp.size() == 5) {
                         if (i == 0) {
-                            file_to << "  " << temp[i];
+                            file_to << " " << temp[i];
                         }
                         else {
                             file_to << temp[i];
@@ -256,21 +259,21 @@ void Circulo::modify2(char change_from, string base)
             }
             primerCaracterEncontrado = true;  // Indicar que ya se encontró el primer carácter
         }
-        else if ((ch_read == change_from || ch_read == '¿' || ch_read == '$' || ch_read == '!' || ch_read == '#') && primerCaracterEncontrado) {
+        else if ((ch_read == change_from || ch_read == '@' || ch_read == '$' || ch_read == '!' || ch_read == '#') && primerCaracterEncontrado) {
             switch (temp.size()) {
             case 1:
                 if (cont == false && ch_read == change_from)
                 {
                     file_to << " ";
                 }
-                else if (cont == false && (ch_read == '$'||ch_read=='¿')) {
+                else if (cont == false && (ch_read == '$'||ch_read=='@')) {
                     file_to << "  ";
                 }
                 else if (cont == false && ch_read == '#') {
-                    file_to << " ";
+                    file_to << "    ";
                 }
                 else if (cont == false && ch_read == '!') {
-                    file_to << " ";
+                    file_to << "    ";
                 }
                 break;
             case 2:
@@ -278,11 +281,11 @@ void Circulo::modify2(char change_from, string base)
                 {
                     file_to << "";
                 }
-                else if (cont == false && (ch_read == '$' || ch_read == '¿')) {
+                else if (cont == false && (ch_read == '$' || ch_read == '@')) {
                     file_to << " ";
                 }
                 else if (cont == false && ch_read == '#') {
-                    file_to << "  ";
+                    file_to << "   ";
                 }
                 else if (cont == false && ch_read == '!') {
                     file_to << "  ";
@@ -293,7 +296,7 @@ void Circulo::modify2(char change_from, string base)
                 {
                     file_to << "";
                 }
-                else if (cont == false && (ch_read == '$' || ch_read == '¿')) {
+                else if (cont == false && (ch_read == '$' || ch_read == '@')) {
                     file_to << "";
                 }
                 else if (cont == false && ch_read == '#') {
@@ -304,7 +307,7 @@ void Circulo::modify2(char change_from, string base)
                 }
                 break;
             case 4:
-                if (cont == false && (ch_read == '$' || ch_read == '¿'))
+                if (cont == false && (ch_read == '$' || ch_read == '@'))
                 {
                     file_to << "";
                 }
@@ -312,7 +315,7 @@ void Circulo::modify2(char change_from, string base)
                     file_to << " ";
                 }
                 else if (cont == false && ch_read == '!') {
-                    file_to << "  ";
+                    file_to << " ";
                 }
                 break;
             case 5:
