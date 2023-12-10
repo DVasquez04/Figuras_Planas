@@ -18,8 +18,8 @@ public:
 	string getAltura();
 	double Perimetro();
 	double Area();
-	void Dibujar();
+	void Dibujar(string);
 	void modify();
-	void Dibujar2();
+	
 };
 

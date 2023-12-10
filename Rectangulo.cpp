@@ -38,10 +38,10 @@ double Rectangulo::Area()
 	return area;
 }
 
-void Rectangulo::Dibujar()
+void Rectangulo::Dibujar(string nombre)
 {
 	string line;
-	ifstream MyFile("Rectangulo.txt");
+	ifstream MyFile(nombre);
 	if (MyFile.is_open()) {
 		while (getline(MyFile, line)) {
 			cout << line << '\n';
@@ -100,17 +100,4 @@ void Rectangulo::modify()
     cout << "Done\n";
 }
 
-void Rectangulo::Dibujar2()
-{
-	string line;
-	ifstream MyFile("Rectangulo2.txt");
-	if (MyFile.is_open()) {
-		while (getline(MyFile, line)) {
-			cout << line << '\n';
-		}
-		MyFile.close();
-	}
-	else {
-		cout << "Unable to open file\n";
-	}
-}
+
