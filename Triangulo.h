@@ -12,6 +12,9 @@ public:
 	string Area();
 	string Perimetro();
 	void Dibujar(string);
-
+	string mult();
+	void Dibujar2();
+	void modify();
+	void modify2(char, string);
 };
 

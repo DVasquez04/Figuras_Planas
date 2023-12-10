@@ -295,8 +295,8 @@ int main(int argc, char* argv[]) {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
     ///Accion(argc, argv); 
-    Circulo c("20");
-    c.Dibujar("Circulo.txt");
-    c.modify();
-    c.Dibujar2();
+    Triangulo t("200", "50", "9", "3");
+    t.Dibujar("Triangulo.txt");
+    t.modify();
+    t.Dibujar2();
 }
