@@ -89,9 +89,9 @@ void Rectangulo::modify()
         }
         else if (ch_read == change_from && primerCaracterEncontrado) {
             if(size==1&&cont==false){
-                file_to << "xx";
+                file_to << "  ";
             }else if(size == 2 && cont == false) {
-                file_to << "x";
+                file_to << " ";
             }
             else {
                 file_to << "";
